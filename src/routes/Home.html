@@ -1,11 +1,18 @@
 <AppBarTitle label="Home" />
 
+<Printable ref:opa>
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et praesentium fugiat ullam quisquam commodi dolorum voluptate, natus inventore voluptatem laudantium minus molestiae aliquam quia? Quibusdam vel a praesentium fuga id?
+</Printable>
+
+<button on:click="refs.opa.print()">Print me!</button>
+
 <script>
   import { AppBarTitle } from '@mambasdk/appbar';
 
   export default {
     components: {
       AppBarTitle,
+      Printable: '@mambasdk/printable',
     },
     data() {
       return {};

@@ -16,9 +16,10 @@
     "start": "webpack-dev-server --config ./node_modules/@mambasdk/webpack/config.dev.js",
     "build": "yarn build-pos",
     "build:dev": "yarn build-pos:dev",
-    "build:analyze": "cross-env NODE_ENV=production webpack --config ./node_modules/@mambasdk/webpack/config.analyzer.js",
+    "build:analyze": "cross-env NODE_ENV=production APP_ENV=pos webpack --config ./node_modules/@mambasdk/webpack/config.analyzer.js",
     "build-browser": "cross-env NODE_ENV=production webpack --config ./node_modules/@mambasdk/webpack/config.build.js",
     "build-browser:dev": "webpack --config ./node_modules/@mambasdk/webpack/config.build.js",
+    "build-browser:analyze": "cross-env NODE_ENV=production webpack --config ./node_modules/@mambasdk/webpack/config.analyzer.js",
     "build-pos": "cross-env NODE_ENV=production APP_ENV=pos webpack --config ./node_modules/@mambasdk/webpack/config.build.js",
     "build-pos:dev": "cross-env APP_ENV=pos webpack --config ./node_modules/@mambasdk/webpack/config.build.js",
     "test": "jest --coverage",
@@ -73,7 +74,7 @@
     "webpack-cli": "^3.1.0"
   },
   "dependencies": {
-    "@mambasdk/api": "^0.0.5",
+    "@mambasdk/os": "^0.0.1",
     "@mambasdk/app": "^0.0.6",
     "@mambasdk/appbar": "^0.0.1",
     "@mambasdk/dialog": "^0.0.2",

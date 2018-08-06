@@ -11,15 +11,10 @@ import store from './store.js';
  * */
 const root = document.getElementById('root');
 
-if (process.env.APP_ENV === 'pos') {
-  new App({
-    target: root,
-    store,
-  });
-}
-
-if (process.env.APP_ENV === 'browser') {
-  if (process.env.NODE_ENV === 'development') {
+if (__POS__) {
+  new App({ target: root, store });
+} else if (__BROWSER__) {
+  if (__DEV__) {
     window.MambaStore = store;
   }
   /** If developing, wrap the app with a <POS></POS> */
