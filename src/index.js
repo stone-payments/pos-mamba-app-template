@@ -18,7 +18,7 @@ if (__POS__) {
     window.MambaStore = store;
   }
   /** If developing, wrap the app with a <POS></POS> */
-  import('@mambasdk/pos').then(({ default: POS }) => {
+  import('@mambasdk/pos/simulator/view/index.js').then(({ default: POS }) => {
     const appFragment = document.createDocumentFragment();
     new App({ target: appFragment, store });
     new POS({
