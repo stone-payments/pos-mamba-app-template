@@ -5,6 +5,7 @@
 
 <script>
   import routes from './routes.js';
+  import store from './store.js';
 
   export default {
     components: {
@@ -12,6 +13,7 @@
       Router: 'svelte-page',
       AppBar: '@mamba/appbar',
     },
+    store: () => store,
     data() {
       return {
         routes,
