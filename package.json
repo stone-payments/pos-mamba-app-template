@@ -31,7 +31,8 @@
     "serve": "mamba app serve",
     "analyze": "mamba app analyze",
     "lint": "mamba app lint",
-    "format": "mamba app format"
+    "format": "mamba app format",
+    "test": "jest"
   },
   "husky": {
     "hooks": {
@@ -62,14 +63,17 @@
     "@mamba/configs": "^1.0.0-rc.28",
     "@mamba/webpack": "^1.0.0-rc.28",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "cross-env": "^5.2.0",
+    "deasync": "^0.1.14",
     "eslint": "^5.9.0",
     "http-server": "^0.11.1",
     "husky": "^1.2.0",
+    "jest": "^23.6.0",
     "lint-staged": "^8.1.0",
     "postcss": "^7.0.6",
     "prettier": "^1.15.2",
-    "quickenv": "^0.0.6",
+    "quickenv": "0.0.6",
     "stylelint": "^9.8.0",
     "svelte-preprocess": "^2.4.3",
     "webpack": "^4.26.1",
