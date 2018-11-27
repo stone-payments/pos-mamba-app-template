@@ -1,20 +1,16 @@
 import Keyboard from '@mamba/pos/api/keyboard.js';
-import Root from './mocks/Root.html';
+import App from '../../src/index.html';
 
-let lastRoot;
+let lastApp;
 
 /* Create a new app root for testing */
-global.newTestRoot = ({ unique = true } = {}) => {
-  if (unique && lastRoot) lastRoot.destroy();
-
-  lastRoot = new Root({ target: document.body });
-
-  lastRoot.target = lastRoot.options.target;
-
-  return lastRoot;
+global.newApp = () => {
+  if (lastApp) lastApp.destroy();
+  lastApp = new App({ target: document.body });
+  return lastApp;
 };
 
-/** Dispatch a clcik event on a dom node */
+/** Dispatch a click event on a dom node */
 global.clickOn = (el, opts = {}) => {
   el.dispatchEvent(
     new MouseEvent('click', {

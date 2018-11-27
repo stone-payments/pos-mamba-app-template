@@ -14,8 +14,14 @@ module.exports = {
     '<rootDir>/tests/setup/simulator.js',
     '<rootDir>/tests/setup/globals.js',
   ],
-  transformIgnorePatterns: ['node_modules/(?!(@mamba)|(.+\\.html)/)'],
   moduleFileExtensions: ['js'],
+  transformIgnorePatterns: [
+    /**
+     * RegEx to NOT ignore ES6 code that nees to be transpiled.
+     * Defaults: '@mamba/packages', '.html' files and 'svelte***.js files'
+     * */
+    'node_modules/(?!(@mamba)|(.+\\.html)|(svelte.+\\.js))',
+  ],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|svg|ttf)$':
       '<rootDir>/tests/jest/__mocks__/fileMock.js',
