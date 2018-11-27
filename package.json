@@ -32,7 +32,8 @@
     "analyze": "mamba app analyze",
     "lint": "mamba app lint",
     "format": "mamba app format",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "husky": {
     "hooks": {

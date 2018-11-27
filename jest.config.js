@@ -18,6 +18,7 @@ module.exports = {
   transformIgnorePatterns: [
     /**
      * RegEx to NOT ignore ES6 code that nees to be transpiled.
+     *
      * Defaults: '@mamba/packages', '.html' files and 'svelte***.js files'
      * */
     'node_modules/(?!(@mamba)|(.+\\.html)|(svelte.+\\.js))',
