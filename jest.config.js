@@ -13,6 +13,7 @@ module.exports = {
   setupFiles: [
     '<rootDir>/tests/setup/simulator.js',
     '<rootDir>/tests/setup/globals.js',
+    '@mamba/configs/jest/globals.js',
   ],
   moduleFileExtensions: ['js'],
   transformIgnorePatterns: [
