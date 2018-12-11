@@ -82,7 +82,7 @@
     "@mamba/dialog": "^1.0.0-rc.27",
     "@mamba/icon": "^1.0.0-rc.27",
     "@mamba/pos": "^1.0.0-rc.27",
-    "@mamba/printable": "^1.0.0-rc.27",
+    "@mamba/printable": "^2.0.0",
     "@mamba/store": "^1.0.0-rc.27",
     "@mamba/styles": "^1.0.0-rc.27",
     "svelte": "2.15.1",
