@@ -76,7 +76,7 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "@mamba/app": "^1.0.0-rc.27",
+    "@mamba/app": "^2.0.0",
     "@mamba/appbar": "^1.0.0-rc.27",
     "@mamba/button": "^1.0.0-rc.27",
     "@mamba/dialog": "^1.0.0-rc.27",
