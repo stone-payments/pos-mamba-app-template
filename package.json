@@ -85,7 +85,7 @@
     "@mamba/pos": "^2.6.4",
     "@mamba/printable": "^2.6.4",
     "@mamba/styles": "^2.6.4",
-    "immer": "^2.0.0",
+    "immer": "^3.0.0",
     "svelte": "2.16.1",
     "svelte-page": "^2.2.1"
   }
