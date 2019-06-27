@@ -46,7 +46,7 @@ cd my-mamba-app
 # Install the standard mamba app template
 npx degit stone-payments/pos-mamba-app-template
 
-# Install its dependencies with 'yarn'
+# Install its dependencies 
 npm i
 
 # Run the development server
