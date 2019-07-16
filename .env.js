@@ -19,7 +19,7 @@ module.exports = {
   // TARGET: process.env.TARGET, // ex: export TARGET="'string value'"; npm run start
   //
   // ... write any environment you want
-  // 'FEATURE': 'my-awesome-feature'
+  // 'FEATURE': JSON.stringify('my-awesome-feature')
   // 'NICE_FEATURE': JSON.stringify(true),
   // 'EXPERIMENTAL_FEATURE': JSON.stringify(false)
 };
