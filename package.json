@@ -70,7 +70,7 @@
     "prettier": "^1.17.1",
     "quickenv": "0.0.6",
     "stylelint": "^10.0.1",
-    "svelte-preprocess": "^2.11.0",
+    "svelte-preprocess": "^3.2.0",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
   },
