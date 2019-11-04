@@ -1,8 +1,6 @@
 # Mamba App template
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/stone-payments/pos-mamba-app-template.svg)](https://greenkeeper.io/)
-
-> A complete project template for building [Mamba](https://github.com/stone-payments/pos-mamba) apps.
+> A complete project template for building [Mamba](https://github.com/stone-payments/pos-mamba-sdk-docs) apps.
 
 ## Requirements
 
