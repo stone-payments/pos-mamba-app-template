@@ -1,38 +1,44 @@
-<AppBarModifier title="Home" />
+<AppBarModifier title="Teste Keystroke" />
 
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  <br>
-  <br>
-  <a href="/about">About</a>
-</p>
+<Button size="full" on:click="refs.levelOne.open()">Abra o Dialog Level One</Button>
 
-<Printable ref:printable>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga unde dicta at quisquam doloremque sunt soluta architecto debitis, sit quidem placeat qui nam expedita quod, mollitia suscipit porro saepe recusandae.
-</Printable>
+<Keystroke key="enter" on:keystroke="refs.levelThree.open()" />
 
-<Button
-  size="full"
-  bottom
-  on:click="refs.printable.print()"
-  shortcut="enter"
->
-  Imprimir! (press. enter)
-</Button>
+<Dialog ref:levelOne>
+  <h1><strong>Level One</strong></h1>
+
+  Aperte Enter para abrir o Dialog level Two
+
+  <Keystroke key="enter" on:keystroke="refs.levelTwo.open()" />
+</Dialog>
+
+<Dialog ref:levelTwo>
+  <h1><strong>Level Two</strong></h1>
+
+  Aperte Enter para fechar o Dialog level Two
+
+  <Keystroke key="close" on:keystroke="refs.levelTwo.close()" />
+</Dialog>
+
+<Dialog ref:levelThree>
+  <h1><strong>Level Three</strong></h1>
+
+  Você abriu o dialog Level Three
+
+    <br/><br/>
+
+  Aperte close para sair
+
+  <Keystroke key="close" on:keystroke="refs.levelThree.close()" />
+</Dialog>
 
 <script>
   export default {
     components: {
       AppBarModifier: '@mamba/appbar/Modifier.html',
-      Printable: '@mamba/printable',
+      Keystroke: '@mamba/app/Keystroke.html',
       Button: '@mamba/button',
+      Dialog: '@mamba/dialog',
     },
   };
 </script>
-
-<style type="text/postcss">
-  p {
-    padding: 20px;
-    font-size: 22px;
-  }
-</style>
