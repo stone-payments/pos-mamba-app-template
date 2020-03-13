@@ -80,7 +80,7 @@
     "@mamba/button": "^2.14.0",
     "@mamba/dialog": "^2.14.0",
     "@mamba/icon": "^2.14.0",
-    "@mamba/pos": "^2.14.0",
+    "@mamba/pos": "^2.26.3",
     "@mamba/printable": "^2.14.0",
     "@mamba/styles": "^2.14.0",
     "core-js": "~3.1.2",
