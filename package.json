@@ -67,7 +67,7 @@
     "jest": "^24.8.0",
     "lint-staged": "^8.1.7",
     "postcss": "^7.0.21",
-    "prettier": "^1.17.1",
+    "prettier": "^2.0.0",
     "quickenv": "0.0.6",
     "stylelint": "^10.0.1",
     "svelte-preprocess": "^2.11.0",
