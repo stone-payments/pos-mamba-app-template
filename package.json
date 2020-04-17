@@ -56,7 +56,7 @@
     "@babel/core": "^7.6.4",
     "@mamba/cli": "^2.13.0",
     "@mamba/configs": "^2.13.0",
-    "@mamba/webpack": "^2.15.0",
+    "@mamba/webpack": "^2.27.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.8.0",
     "cross-env": "^5.2.1",
