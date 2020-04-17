@@ -82,7 +82,7 @@
     "@mamba/icon": "^2.14.0",
     "@mamba/pos": "^2.14.0",
     "@mamba/printable": "^2.14.0",
-    "@mamba/styles": "^2.14.0",
+    "@mamba/styles": "^2.27.3",
     "core-js": "~3.1.2",
     "immer": "^3.3.0",
     "svelte": "2.16.1",
