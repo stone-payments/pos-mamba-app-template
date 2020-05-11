@@ -77,7 +77,7 @@
   "dependencies": {
     "@mamba/app": "^2.14.0",
     "@mamba/appbar": "^2.14.0",
-    "@mamba/button": "^2.14.0",
+    "@mamba/button": "^2.28.0",
     "@mamba/dialog": "^2.14.0",
     "@mamba/icon": "^2.14.0",
     "@mamba/pos": "^2.14.0",
