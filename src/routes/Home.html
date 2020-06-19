@@ -29,7 +29,7 @@
       };
     },
     oncreate() {
-      const stonecode = '45102043';
+      const stonecode = __PROD__ ? '155559399' : '45102043';
       this.set({ stonecode });
     },
     methods: {
