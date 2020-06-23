@@ -52,40 +52,34 @@
       ]
     }
   },
-  "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@mamba/cli": "^2.13.0",
-    "@mamba/configs": "^2.13.0",
-    "@mamba/webpack": "^2.27.4",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^24.8.0",
-    "cross-env": "^5.2.1",
-    "deasync": "^0.1.15",
-    "eslint": "^5.13.0",
-    "http-server": "^0.11.1",
-    "husky": "^2.3.0",
-    "jest": "^24.8.0",
-    "lint-staged": "^8.1.7",
-    "postcss": "^7.0.21",
-    "prettier": "^1.17.1",
-    "quickenv": "0.0.6",
-    "stylelint": "^10.0.1",
-    "svelte-preprocess": "^2.11.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
-  },
   "dependencies": {
     "@mamba/app": "^2.14.0",
-    "@mamba/appbar": "^2.14.0",
-    "@mamba/button": "^2.14.0",
-    "@mamba/dialog": "^2.14.0",
-    "@mamba/icon": "^2.14.0",
-    "@mamba/pos": "^2.14.0",
-    "@mamba/printable": "^2.14.0",
-    "@mamba/styles": "^2.14.0",
-    "core-js": "~3.1.2",
-    "immer": "^3.3.0",
-    "svelte": "2.16.1",
-    "svelte-page": "^2.2.1"
+    "immer": "^7.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/polyfill": "^7.10.1",
+    "@mamba/cli": "^2.29.3",
+    "@mamba/configs": "^2.29.3",
+    "@mamba/webpack": "^2.29.3",
+    "babel-jest": "^26.0.1",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "lint-staged": "^10.2.9",
+    "postcss": "^7.0.32",
+    "prettier": "^2.0.5",
+    "prettier-plugin-svelte": "^1.1.0",
+    "quickenv": "^0.0.6",
+    "stylelint": "^13.6.0",
+    "svelte": "^3.23.0",
+    "svelte-preprocess": "^3.7.4",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^3.0.0"
+  },
+  "resolutions": {
+    "core-js": "^3.1.2"
   }
 }
