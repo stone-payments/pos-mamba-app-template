@@ -1,67 +1,66 @@
 <AppBarModifier title="Payment" />
 
 <div class="container">
-  <p>Pagamento com o Stonecode:</p>
-  <h2>{stonecode}</h2>
+  <Input
+    ref:stonecodeInput
+    autofocus
+    label="DIGITE O STONECODE"
+    maxlength="9"
+    bind:value="stoneCode" />
 </div>
 
-
+<br>
 <Button
   size="full"
-  bottom
   on:click="pay()"
   shortcut="enter"
+  disabled={stoneCode.length < 9}
 >
   PAGAR
+</Button>
+<br>
+<br>
+<Button
+  size="full"
+  on:click="activate()"
+  shortcut="enter"
+  disabled={stoneCode.length < 9}
+>
+  ATIVAR
 </Button>
 
 <script>
   import Payment from '@mamba/pos/api/payment.js';
+  import System from '@mamba/pos/api/system.js';
 
   export default {
     components: {
       AppBarModifier: '@mamba/appbar/Modifier.html',
       Button: '@mamba/button',
+      Input: '@mamba/input',
     },
     data() {
       return {
-        stonecode: '',
+        stoneCode: '',
       };
-    },
-    oncreate() {
-      const stonecode = __PROD__ ? '155559399' : '45102043';
-      this.set({ stonecode });
     },
     methods: {
       pay() {
-        const { stonecode } = this.get();
+        const { stoneCode } = this.get();
         Payment.pay({
           amount: 100,
-          stonecode,
+          stoneCode,
         })
           .then(() => console.log('chamoou'))
           .catch((error) => console.error(error));
+      },
+      activate() {
+        const { stoneCode } = this.get();
+        System.activateStonecode(stoneCode)
+          .then(() => alert(`ATIVOU O ${stoneCode}`))
+          .catch(() => alert(`NÃO ATIVOU ${stoneCode}`));
       },
     },
   };
 </script>
 
-<style type="text/postcss">
-  .container {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-
-    p {
-      font-size: 16px;
-      padding-bottom: 5px;
-    }
-
-    h2 {
-      font-weight: bold;
-      color: #4ebf1a;
-    }
-  }
-</style>
