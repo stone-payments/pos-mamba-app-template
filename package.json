@@ -1,6 +1,6 @@
 {
   "name": "my-mamba-app",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Starter template for Mamba Applications.",
   "mamba": {
     "id": 99,
@@ -54,9 +54,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
-    "@mamba/cli": "^2.13.0",
-    "@mamba/configs": "^2.13.0",
-    "@mamba/webpack": "^2.27.4",
+    "@mamba/cli": "^3.0.0",
+    "@mamba/configs": "^3.0.0",
+    "@mamba/webpack": "^3.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.8.0",
     "cross-env": "^5.2.1",
@@ -75,14 +75,14 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "@mamba/app": "^2.14.0",
-    "@mamba/appbar": "^2.14.0",
-    "@mamba/button": "^2.14.0",
-    "@mamba/dialog": "^2.14.0",
-    "@mamba/icon": "^2.14.0",
-    "@mamba/pos": "^2.14.0",
-    "@mamba/printable": "^2.14.0",
-    "@mamba/styles": "^2.14.0",
+    "@mamba/app": "^3.0.0",
+    "@mamba/appbar": "^3.0.0",
+    "@mamba/button": "^3.0.0",
+    "@mamba/dialog": "^3.0.0",
+    "@mamba/icon": "^3.0.0",
+    "@mamba/pos": "^3.0.0",
+    "@mamba/printable": "^3.0.0",
+    "@mamba/styles": "^3.0.0",
     "core-js": "~3.1.2",
     "immer": "^3.3.0",
     "svelte": "2.16.1",

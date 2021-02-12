@@ -24,7 +24,7 @@ npm i -g @mamba/cli
 mamba new app my-mamba-app
 
 ? Name: My Mamba App
-? Version: 0.0.1
+? Version: 1.0.0
 ? Description: My new Mamba app
 
 # Enter the app directory
@@ -44,7 +44,7 @@ cd my-mamba-app
 # Install the standard mamba app template
 npx degit stone-payments/pos-mamba-app-template
 
-# Install its dependencies 
+# Install its dependencies
 npm i
 
 # Run the development server
