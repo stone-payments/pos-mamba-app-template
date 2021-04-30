@@ -16,6 +16,7 @@ const packageJson = require('./package.json');
 
 module.exports = {
   VERSION: JSON.stringify(packageJson.version),
+  DEVHOST_IP: JSON.stringify(process.env.DEVHOST_IP),
   // TARGET: process.env.TARGET, // ex: export TARGET="'string value'"; npm run start
   //
   // ... write any environment you want
