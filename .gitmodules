@@ -1,3 +1,0 @@
-[submodule "vendors"]
-	path = vendors
-	url = git@github.com:stone-payments/pos-mamba-packages.git

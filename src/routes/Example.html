@@ -1,0 +1,203 @@
+<FlatList
+  data={sectionList}
+  renderItem={DefaultRow}
+  on:itemActive="itemActive(event)"
+  on:itemSelected="itemSelected(event)"
+  autoShortcuts={true}
+  decorator={GetDefaultDecorator}
+/>
+
+<h5 style="padding: 12px;">With Custom row component</h5>
+<FlatList
+  dataSection={dataList}
+  renderItem={Line}
+  on:itemActive="itemActive(event)"
+  on:itemSelected="itemSelected(event)"
+/>
+
+<p style="padding: 12px;">
+  <small>
+   The highlighting may behave unexpectedly in this example, as the FlatList must not coexist with another on the same page.
+</small>
+</p>
+
+<!-- To Override default decorator props, you can pass a `decoratorOverrides` object  -->
+<!--
+  <FlatList
+    ...
+    decorator={GetDefaultDecorator}
+    decoratorOverrides={{
+      prefix: null
+    }}
+  />
+-->
+
+<!-- or override by model -->
+<!--
+  <FlatList
+    ...
+    decorator={GetDefaultDecorator}
+    decoratorOverrides={{
+      S920: {
+        prefix: null
+      }
+    }}
+  />
+-->
+
+<script>
+import { DefaultRow, FlatList, GetDefaultDecorator } from '@mamba/flatlist/index.js';
+import * as Colors from '@mamba/styles/colors.js';
+import Line from './Line.html';
+
+export default {
+  components: {
+    FlatList,
+  },
+  helpers: {
+    DefaultRow,
+    GetDefaultDecorator,
+    Line,
+  },
+  data() {
+    return {
+      sectionList: [],
+      dataList: [],
+    };
+  },
+  computed: {
+    _someComputedProp({ dataList }) {
+      return dataList[0];
+    },
+  },
+  oncreate() {
+    const sectionList = this.getSectionList();
+    const dataList = this.getData();
+
+    this.set({
+      sectionList,
+      dataList,
+    });
+
+  },
+  methods: {
+    getSectionList() {
+      const section = [
+        {
+          title: 'With Sections',
+          data: [
+            {
+              shortcut: 1,
+              label: {
+                value: 'Row 1',
+              },
+              onSelected: (item) => {
+                /*
+                * In this case, this anonymous function can call this script methods
+                */
+                const { _someComputedProp } = this.get();
+                console.log(_someComputedProp);
+
+                this.itemHandler(item);
+              },
+            },
+            {
+              shortcut: 2,
+              label: {
+                value: 'Row 2',
+              },
+              /*
+              * Executing a method on `onSelect`, will call the desired
+              * function when the list is mounted, making it possible to return a dynamic function.
+              */
+              onSelected: this.getClickHandler(),
+            },
+            {
+              shortcut: 3,
+              label: {
+                value: 'Row 3',
+              },
+              /*
+              * Just referencing a function, The `this` will be of this script, but the `this` inside function scope, will be this object reference.
+              * To refer methods of this script inside the function reference, use bind:
+              * Eg.: this.itemHandler.bind(this)
+              *
+              * itemHandler() {
+              *   // Without bind
+              *   console.log(this) // { label: 'Row 3', shortcut: 3, itemHandler: function... }
+              *   // With bind
+              *   this.anotherMethod();
+              * }
+              */
+              onSelected: this.itemHandler.bind(this),
+            },
+            false && { // Conditional row
+              label: {
+                value: 'Row 4',
+              },
+              shortcut: 4,
+            },
+          ],
+        },
+        {
+          title: 'Devices',
+          data: [
+            {
+              shortcut: 1,
+              label: {
+                value: 'Device 1',
+              },
+            },
+            {
+              shortcut: 2,
+              label: {
+                value: 'Device 2',
+              },
+              onSelected: (item) => this.itemHandler(item),
+            },
+          ],
+        },
+      ];
+      return section;
+    },
+    getData() {
+      const data = [
+        {
+          label: {
+            value: 'Row Label 1',
+          },
+        },
+        {
+          onSelected: (itemData) => this.itemHandler(itemData),
+          label: {
+            value: 'Row Label 2',
+            description: 'Row Description',
+            style: {
+              color: Colors.purple700,
+            },
+          },
+        },
+      ];
+      return data;
+    },
+    getClickHandler() {
+      if(__DEV__) return (item) => {
+        console.log('Condition function', item);
+      };
+
+      return (item) => {
+        console.log('Default function', item);
+      };
+    },
+    itemHandler({ index, sectionIndex, position, data } = {}) {
+      console.log(`Row ${sectionIndex}-${index},`, `position: ${position}`, data);
+    },
+    itemSelected({ index, sectionIndex, position, data }) {
+      console.log(`itemSelected ${sectionIndex}-${index},`, `position: ${position}`, data);
+    },
+    itemActive({ index, sectionIndex, position, data }) {
+      console.log(`itemActive ${sectionIndex}-${index},`, `position: ${position}`, data);
+    },
+  },
+};
+</script>

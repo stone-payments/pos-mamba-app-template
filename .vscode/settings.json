@@ -9,9 +9,6 @@
   "editor.trimAutoWhitespace": true,
   "files.trimTrailingWhitespace": true,
 
-  /** Make prettier use eslint and stylelint */
-  "prettier.eslintIntegration": true,
-  "prettier.stylelintIntegration": true,
 
   /** Disable vscode default linters */
   "javascript.validate.enable": false,
@@ -54,12 +51,8 @@
     "editor.formatOnSave": true
   },
 
-  /** Auto-fix on save */
-  "eslint.autoFixOnSave": true,
-  /** Validate html/svelte files */
-  "eslint.validate": [
-    { "language": "javascript", "autoFix": true },
-    { "language": "html", "autoFix": true },
-    { "language": "svelte", "autoFix": true }
-  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": false,
+    "source.fixAll.eslint": false
+  },
 }

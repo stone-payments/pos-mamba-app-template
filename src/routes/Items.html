@@ -1,0 +1,178 @@
+
+<FlatList
+  data={dataList}
+  renderItem={DefaultRow}
+  on:itemActive="itemActive(event)"
+  on:itemSelected="itemSelected(event)"
+  autoShortcuts={true}
+  decorator={GetDefaultDecorator}
+/>
+
+<!-- <FlatList
+  dataSection={sectionList}
+  renderItem={DefaultRow}
+  on:itemActive="itemActive(event)"
+  on:itemSelected="itemSelected(event)"
+  itemHandler={this}
+/> -->
+
+<script>
+import { DefaultRow, FlatList, GetDefaultDecorator } from '@mamba/flatlist/index.js';
+import * as Colors from '@mamba/styles/colors.js';
+import Icon from '@mamba/icon';
+import Switch from '@mamba/switch';
+
+export default {
+  components: {
+    FlatList,
+  },
+  helpers: {
+    DefaultRow,
+    GetDefaultDecorator,
+  },
+  data() {
+    return {
+      sectionList: [],
+      dataList: [],
+    };
+  },
+  oncreate() {
+
+    const sectionList = this.getSectionList();
+    const dataList = this.getData();
+
+    this.set({
+      sectionList,
+      dataList,
+    });
+
+  },
+  methods: {
+    getData() {
+      const data = [
+        {
+          label: {
+            value: 'à vista',
+          },
+        },
+        {
+          label: {
+            value: 'Parcelado sem juros',
+          },
+        },
+        {
+          label: {
+            value: 'Parcelado emissor',
+          },
+        },
+        {
+          verticalAlign: 'center',
+          onSelected: (row) => {
+            console.log('onSelected anon', this);
+            this.itemClickHandler(row);
+          },
+          label: {
+            value: 'Histórico de antecipações',
+          },
+          endFixture: {
+            value: () => Icon,
+            props: { symbol: 'wifi', level: 2 },
+            contentStyle: {
+              paddingRight: '5px',
+            },
+          },
+        },
+        {
+          verticalAlign: 'center',
+          label: {
+            value: 'Trocar classe',
+          },
+          endFixture: {
+            value: () => Switch,
+            props: {
+              change: () => console.log('changed'),
+            },
+            contentStyle: {
+              paddingRight: '5px',
+            },
+          },
+        },
+        {
+          onSelected: this.itemClickHandler.bind(this),
+          label: {
+            value: 'Parcelado com juros',
+            description: 'Comprador assume as taxas do parcelamento',
+            style: {
+              color: Colors.purple700,
+            },
+          },
+        },
+      ];
+      console.log(data);
+      return data;
+    },
+    getSectionList() {
+      const section = [
+        {
+          title: 'Disks',
+          data: [
+            {
+              label: { value: 'Disk 1' },
+              shortcut: 1,
+              onSelected: (item) => {
+                const { dataList } = this.get();
+                console.log('dataList', dataList);
+                /*
+                * Using `itemHandler` Flatlist property, so you can call methods of a desired class or object directly
+                * In this case we use the methods os this page
+                */
+                this.itemClickHandler(item);
+              },
+            },
+            {
+              label: { value: 'Disk 2' },
+              shortcut: 2,
+              /*
+              * Wrong! Using `this` without a function wrapper or referencing doesn't work,
+              * unless the method returns another function
+              */
+              onSelected: this.getClickHandler(),
+            },
+            {
+              label: { value: 'Disk 3' },
+              shortcut: 3,
+              /*
+              * Just referencing a function, `itemHandler` will have effect. The `this` will be this script
+              */
+              onSelected: this.itemClickHandler.bind(this),
+            },
+          ],
+        },
+      ];
+      return section;
+    },
+    changeSound() {
+      console.log('Beep');
+    },
+    getClickHandler() {
+      if(__DEV__) return () => {
+        console.log('Condition function');
+      };
+
+      return () => {
+        console.log('Default function');
+      };
+    },
+    itemClickHandler({ index, sectionIndex, position, data } = {}) {
+      console.log(`Row ${sectionIndex}-${index},`, `position: ${position}`, data);
+      this.changeSound();
+    },
+    itemSelected({ index, sectionIndex, position, data }) {
+      console.log(`itemSelected ${sectionIndex}-${index},`, `position: ${position}`, data);
+    },
+    itemActive({ index, sectionIndex, position, data }) {
+      console.log(`itemActive ${sectionIndex}-${index},`, `position: ${position}`, data);
+    },
+  },
+};
+</script>
