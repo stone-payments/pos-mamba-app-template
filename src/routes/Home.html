@@ -1,64 +1,122 @@
 <AppBarModifier title="Payment" />
 
-<div class="container">
-  <Input
-    ref:stonecodeInput
-    autofocus
-    label="DIGITE O STONECODE"
-    maxlength="9"
-    bind:value="stoneCode" />
-</div>
-
-<br>
-<Button
-  size="full"
-  on:click="pay()"
-  shortcut="enter"
-  disabled={stoneCode.length < 9}
->
-  PAGAR
-</Button>
-<br>
-<br>
-<Button
-  size="full"
-  on:click="activate()"
-  shortcut="enter"
-  disabled={stoneCode.length < 9}
->
-  ATIVAR
-</Button>
+<Tabs>
+  <TabPane label="Ativar">
+    <Input
+      ref:stonecode
+      autofocus
+      forcefocus
+      label="STONECODE"
+      bind:value="stoneCode"
+      maxlength="9"
+      on:submit="activate()" />
+    <Button
+      size="full"
+      bottom
+      on:click="activate()"
+      shortcut="enter"
+      disabled={stoneCode.length < 9}
+    >
+      ATIVAR
+    </Button>
+    <Button
+      size="full"
+      on:click="inactivate()"
+      shortcut="enter"
+    >
+      DESATIVAR
+    </Button>
+  </TabPane>
+  <TabPane label="Pagar">
+    <MoneyInput
+      ref:amount
+      autofocus
+      forcefocus
+      label="VALOR"
+      bind:value="amount"
+      on:submit="pay()" />
+    <Button
+      size="full"
+      bottom
+      on:click="pay()"
+      shortcut="enter"
+      disabled={amount.length === 0}
+    >
+      PAGAR
+    </Button>
+  </TabPane>
+  <TabPane label="Cancelar">
+    <Input
+      ref:cancel
+      autofocus
+      forcefocus
+      label="DIGITE O ATK"
+      bind:value="atk"
+      on:submit="cancel()" />
+      <Button
+        size="full"
+        on:click="cancel()"
+        shortcut="enter"
+        bottom
+        disabled={atk.length === 0}
+      >
+        CANCELAR
+      </Button>
+  </TabPane>
+</Tabs>
 
 <script>
   import Payment from '@mamba/pos/api/payment.js';
   import System from '@mamba/pos/api/system.js';
+  import Storage from '@mamba/pos/api/storage.js';
 
   export default {
     components: {
       AppBarModifier: '@mamba/appbar/Modifier.html',
       Button: '@mamba/button',
       Input: '@mamba/input',
+      MoneyInput: '@mamba/input/Money.html',
+      Tabs: '@mamba/tabs/Tabs.html',
+      TabPane: '@mamba/tabs/TabPane.html',
     },
     data() {
       return {
-        stoneCode: '',
+        atk: '',
+        amount: '',
+        stoneCode: Storage.getItem('stonecode') || '',
       };
     },
     methods: {
       pay() {
         const { stoneCode } = this.get();
+        const { amount } = this.refs;
+        const { cents } = amount.get();
         Payment.pay({
-          amount: 100,
+          amount: cents,
           stoneCode,
         })
+          .then(() => console.log('chamoou'))
+          .catch((error) => console.error(error));
+      },
+      cancel() {
+        const { atk } = this.get();
+        Payment.cancel(atk)
           .then(() => console.log('chamoou'))
           .catch((error) => console.error(error));
       },
       activate() {
         const { stoneCode } = this.get();
         System.activateStonecode(stoneCode)
-          .then(() => alert(`ATIVOU O ${stoneCode}`))
-          .catch(() => alert(`NÃO ATIVOU ${stoneCode}`));
+          .then(() => {
+            this.store.set({ stoneCode });
+            Storage.setItem('stonecode', stoneCode);
+          })
+          .catch((error) => console.error(error));
+      },
+      inactivate() {
+        this.store.set({ stoneCode: '' });
+        this.set({ stoneCode: '' });
+        Storage.setItem('stonecode', '');
       },
     },
   };
