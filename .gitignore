@@ -1,6 +1,7 @@
 # Dynamically created
 node_modules/
 dist/
+package-lock.json
 
 # Workspace files
 /coverage/
