@@ -84,7 +84,7 @@
     "@mamba/printable": "^5.2.0",
     "@mamba/styles": "^4.3.0",
     "core-js": "~3.1.2",
-    "immer": "^3.3.0",
+    "immer": "^9.0.6",
     "svelte": "2.16.1",
     "svelte-page": "^2.2.1"
   }
