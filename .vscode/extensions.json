@@ -1,15 +1,10 @@
 {
   "recommendations": [
-    "CoenraadS.bracket-pair-colorizer-2",
-    "aaron-bond.better-comments",
     "dbaeumer.vscode-eslint",
-    "shinnn.stylelint",
+    "stylelint.vscode-stylelint",
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
-    "formulahendry.auto-close-tag",
-    "jamesbirtles.svelte-vscode",
     "msjsdiag.debugger-for-chrome",
-    "ricard.postcss",
-    "vincaslt.highlight-matching-tag"
+    "vunguyentuan.vscode-postcss"
   ]
 }

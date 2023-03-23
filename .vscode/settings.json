@@ -1,35 +1,26 @@
 {
   /** Allow to assign breakpoints to svelte templates */
   "debug.allowBreakpointsEverywhere": true,
-
   /** Enforce LF as line ending */
   "files.eol": "\n",
-
   /** Normalize trailing whitespaces */
   "editor.trimAutoWhitespace": true,
   "files.trimTrailingWhitespace": true,
-
-  /** Make prettier use eslint and stylelint */
-  "prettier.eslintIntegration": true,
-  "prettier.stylelintIntegration": true,
-
   /** Disable vscode default linters */
   "javascript.validate.enable": false,
   "typescript.validate.enable": false,
   "css.validate": false,
   "html.validate.scripts": false,
   "html.validate.styles": false,
-
+  "html.format.preserveNewLines": true,
+  "html.format.wrapAttributes": "auto",
   /** Disable svelte-vscode linters */
   "svelte.plugin.css.diagnostics.enable": false,
   "svelte.plugin.typescript.diagnostics.enable": false,
-  "svelte.plugin.html.format.enable": false,
-
   /** Associate css files to postcss language */
   "files.associations": {
     "*.css": "postcss"
   },
-
   /** Emmet completion in postcss context */
   "emmet.includeLanguages": {
     "postcss": "css"
@@ -42,10 +33,11 @@
     "editor.formatOnSave": true
   },
   "[html]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
   },
   "[javascript]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[css]": {
     "editor.formatOnSave": true
@@ -53,13 +45,25 @@
   "[postcss]": {
     "editor.formatOnSave": true
   },
-
-  /** Auto-fix on save */
-  "eslint.autoFixOnSave": true,
-  /** Validate html/svelte files */
-  "eslint.validate": [
-    { "language": "javascript", "autoFix": true },
-    { "language": "html", "autoFix": true },
-    { "language": "svelte", "autoFix": true }
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "editor.rulers": [
+    100
   ],
+  /* Specifying which files to validate */
+  "stylelint.validate": [
+    "css",
+    "postcss",
+    "html"
+  ],
+  /* Controls the package manager to be used to resolve the Stylelint library */
+  "stylelint.packageManager": "yarn",
+  /* Enforce the extension use appropriate syntax for us. If invalid, VSCode will notify.*/
+  "stylelint.customSyntax": "postcss-html",
+  /* Enforce working dir for monorepo */
+  "eslint.workingDirectories": [
+    "./"
+  ]
 }
