@@ -6,7 +6,7 @@
 
 Make sure all dependencies have been installed before moving on:
 
-- [Node.js](http://nodejs.org/) >= v8.11.3
+- [Node.js](http://nodejs.org/) >= v14.15.0
 
 Recommended:
 
@@ -85,4 +85,4 @@ npm run serve # Starts the local http server
 
 ## Documentation
 
-- [Svelte](https://svelte.technology/guide)
+- [Svelte](https://svelte.dev/docs)

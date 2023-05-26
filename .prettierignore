@@ -1,2 +1,5 @@
-dist/
-/bundle*
+node_modules
+data
+build
+coverage
+dist

@@ -1,0 +1,25 @@
+{
+  "extends": "@mamba/configs/typescript/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/": [
+        "src/"
+      ],
+      "@/*": [
+        "src/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@c/*": [
+        "src/components/*",
+        "src/components"
+      ]
+    },
+  },
+  "include": [
+    "./src/**/*",
+    "./test/**/*",
+  ]
+}

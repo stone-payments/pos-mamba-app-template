@@ -1,15 +1,11 @@
 {
   "recommendations": [
-    "CoenraadS.bracket-pair-colorizer-2",
-    "aaron-bond.better-comments",
+    "bradlc.vscode-tailwindcss",
+    "svelte.svelte-vscode",
+    "arcanis.vscode-zipfs",
     "dbaeumer.vscode-eslint",
-    "shinnn.stylelint",
-    "editorconfig.editorconfig",
-    "esbenp.prettier-vscode",
-    "formulahendry.auto-close-tag",
-    "jamesbirtles.svelte-vscode",
-    "msjsdiag.debugger-for-chrome",
-    "ricard.postcss",
-    "vincaslt.highlight-matching-tag"
+    "vunguyentuan.vscode-postcss",
+    "styled-components.vscode-styled-components",
+    "mgmcdermott.vscode-language-babel"
   ]
 }

@@ -29,11 +29,6 @@
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "linters": {
       "*.{html,svelte}": [
@@ -52,40 +47,66 @@
       ]
     }
   },
+  "packageManager": "yarn@3.5.1",
+  "resolutions": {
+    "@mamba/babel-config": "portal:../pos-mamba-sdk/packages/babel",
+    "@mamba/cli": "portal:../pos-mamba-sdk/packages/cli",
+    "@mamba/commitlint-config-standard": "portal:../pos-mamba-sdk/packages/commitlint",
+    "@mamba/configs": "portal:../pos-mamba-sdk/packages/configs",
+    "@mamba/core": "portal:../pos-mamba-sdk/packages/core",
+    "@mamba/currency": "portal:../pos-mamba-sdk/packages/currency",
+    "@mamba/date": "portal:../pos-mamba-sdk/packages/date",
+    "@mamba/device": "portal:../pos-mamba-sdk/packages/device",
+    "@mamba/eslint-config": "portal:../pos-mamba-sdk/packages/eslint",
+    "@mamba/jade": "portal:../pos-mamba-sdk/packages/jade",
+    "@mamba/jade-base": "portal:../pos-mamba-sdk/packages/jade-base",
+    "@mamba/prettier-config": "portal:../pos-mamba-sdk/packages/prettier",
+    "@mamba/stylelint-config": "portal:../pos-mamba-sdk/packages/stylelint",
+    "@mamba/styles": "portal:../pos-mamba-sdk/packages/styles",
+    "@mamba/testing": "portal:../pos-mamba-sdk/packages/testing",
+    "@mamba/utils": "portal:../pos-mamba-sdk/packages/utils",
+    "@mamba/webpack": "portal:../pos-mamba-sdk/packages/webpack"
+  },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@mamba/cli": "^3.3.4",
-    "@mamba/configs": "^3.5.4",
-    "@mamba/webpack": "^3.5.3",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^24.8.0",
-    "cross-env": "^5.2.1",
-    "deasync": "^0.1.15",
-    "eslint": "^5.13.0",
-    "http-server": "^0.11.1",
-    "husky": "^2.3.0",
-    "jest": "^24.8.0",
-    "lint-staged": "^8.1.7",
-    "postcss": "^7.0.21",
-    "prettier": "^1.17.1",
-    "quickenv": "0.0.6",
-    "stylelint": "^10.0.1",
-    "svelte-preprocess": "^2.11.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@commitlint/cli": "^7.6.1",
+    "@commitlint/config-conventional": "^14.1.0",
+    "@commitlint/config-lerna-scopes": "^15.0.0",
+    "@mamba/babel-config": "*",
+    "@mamba/commitlint-config-standard": "*",
+    "@mamba/eslint-config": "*",
+    "@mamba/prettier-config": "*",
+    "@mamba/stylelint-config": "*",
+    "@testing-library/svelte": "^3.2.2",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^20.2.3",
+    "autoprefixer": "^10",
+    "commitizen": "^3.1.2",
+    "core-js": "^3.30.2",
+    "cross-env": "^7.0.3",
+    "cypress": "^12",
+    "eslint": "^8",
+    "jest": "^29",
+    "postcss": "^8",
+    "prettier": "^2",
+    "stylelint": "^15",
+    "svelte": "^3.59.1",
+    "svelte-preprocess": "^5.0.3",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5",
+    "webpack": "^5"
   },
   "dependencies": {
-    "@mamba/app": "^3.5.3",
-    "@mamba/appbar": "^3.5.3",
-    "@mamba/button": "^3.5.3",
-    "@mamba/dialog": "^3.5.3",
-    "@mamba/icon": "^3.5.3",
-    "@mamba/pos": "^3.7.0",
-    "@mamba/printable": "^3.6.0",
-    "@mamba/styles": "^3.5.3",
-    "core-js": "~3.1.2",
-    "immer": "^3.3.0",
-    "svelte": "2.16.1",
-    "svelte-page": "^2.2.1"
+    "@mamba/cli": "*",
+    "@mamba/configs": "*",
+    "@mamba/jade": "*",
+    "@mamba/jade-base": "*",
+    "@mamba/styles": "*",
+    "@mamba/testing": "*",
+    "@mamba/utils": "*",
+    "@mamba/webpack": "*"
   }
 }

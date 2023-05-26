@@ -1,65 +1,39 @@
 {
-  /** Allow to assign breakpoints to svelte templates */
-  "debug.allowBreakpointsEverywhere": true,
-
-  /** Enforce LF as line ending */
-  "files.eol": "\n",
-
-  /** Normalize trailing whitespaces */
-  "editor.trimAutoWhitespace": true,
-  "files.trimTrailingWhitespace": true,
-
-  /** Make prettier use eslint and stylelint */
-  "prettier.eslintIntegration": true,
-  "prettier.stylelintIntegration": true,
-
-  /** Disable vscode default linters */
-  "javascript.validate.enable": false,
-  "typescript.validate.enable": false,
-  "css.validate": false,
-  "html.validate.scripts": false,
-  "html.validate.styles": false,
-
-  /** Disable svelte-vscode linters */
-  "svelte.plugin.css.diagnostics.enable": false,
-  "svelte.plugin.typescript.diagnostics.enable": false,
-  "svelte.plugin.html.format.enable": false,
-
+  "emmet.showExpandedAbbreviation": "always",
   /** Associate css files to postcss language */
   "files.associations": {
     "*.css": "postcss"
   },
-
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  /** Enforce the extension use appropriate syntax for us. If invalid, VSCode will notify. */
+  "stylelint.customSyntax": "postcss-html",
+  /** Specifying which files to validate */
+  "stylelint.validate": [
+    "css",
+    "postcss",
+    "html"
+  ],
   /** Emmet completion in postcss context */
   "emmet.includeLanguages": {
+    "svelte": "html",
     "postcss": "css"
   },
   "emmet.syntaxProfiles": {
     "postcss": "css"
   },
-  /** Enable auto format */
   "[svelte]": {
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "svelte.svelte-vscode"
   },
-  "[html]": {
-    "editor.formatOnSave": true
-  },
-  "[javascript]": {
-    "editor.formatOnSave": true
-  },
-  "[css]": {
-    "editor.formatOnSave": true
-  },
-  "[postcss]": {
-    "editor.formatOnSave": true
-  },
-
-  /** Auto-fix on save */
-  "eslint.autoFixOnSave": true,
-  /** Validate html/svelte files */
   "eslint.validate": [
-    { "language": "javascript", "autoFix": true },
-    { "language": "html", "autoFix": true },
-    { "language": "svelte", "autoFix": true }
+    "javascript",
+    "typescript",
+    "svelte"
   ],
+  "svelte.plugin.typescript.enable": true,
+  "svelte.enable-ts-plugin": true,
+  "javascript.suggestionActions.enabled": false,
+  "svelte.plugin.css.diagnostics.enable": false,
+  "editor.tabCompletion": "on",
 }
