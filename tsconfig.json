@@ -1,25 +1,24 @@
 {
   "extends": "@mamba/configs/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "src",
+    /**
+     * Customize you paths
+     */
     "paths": {
-      "@/": [
-        "src/"
-      ],
       "@/*": [
-        "src/*"
+        "*"
       ],
       "@assets/*": [
-        "src/assets/*"
+        "assets/*"
       ],
       "@c/*": [
-        "src/components/*",
-        "src/components"
+        "components/*"
       ]
-    },
+    }
   },
   "include": [
-    "./src/**/*",
-    "./test/**/*",
-  ]
+    "src",
+    "tests/**/*",
+  ],
 }
