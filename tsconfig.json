@@ -1,5 +1,5 @@
 {
-  "extends": "@mamba/configs/typescript/tsconfig.json",
+  "extends": "@mamba/configs/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

@@ -1,6 +1,11 @@
 {
   "name": "my-mamba-app",
   "version": "1.0.0",
+  "bin": {
+    "mamba-build3": "temp_cli/node_build.mjs",
+    "mamba-test3": "temp_cli/node_build_test.mjs",
+    "mamba3": "temp_cli/node_start.mjs"
+  },
   "description": "Starter template for Mamba Applications.",
   "mamba": {
     "id": 99,
@@ -9,15 +14,16 @@
     "appCreationDate": "2017-07-17T13:32:00",
     "appKey": "11-11-11-11"
   },
+  "type": "module",
   "license": "Apache-2.0",
   "author": "Stone Payments - Mamba Team",
   "contributors": [],
   "engines": {
-    "node": ">= 8.11.3",
-    "npm": ">= 5"
+    "node": ">= 16",
+    "npm": ">= 7"
   },
   "scripts": {
-    "start": "mamba app start",
+    "start": "mamba3 app start",
     "build": "mamba app build",
     "build:dev": "mamba app build -d",
     "build-browser": "mamba app build -t browser",
@@ -68,45 +74,44 @@
     "@mamba/webpack": "portal:../pos-mamba-sdk/packages/webpack"
   },
   "devDependencies": {
-    "@babel/cli": "^7.21.5",
-    "@babel/core": "^7.21.4",
-    "@babel/preset-env": "^7.21.4",
-    "@commitlint/cli": "^7.6.1",
-    "@commitlint/config-conventional": "^14.1.0",
-    "@commitlint/config-lerna-scopes": "^15.0.0",
+    "@babel/cli": "^7",
+    "@babel/core": "^7",
+    "@babel/preset-env": "^7",
     "@mamba/babel-config": "*",
-    "@mamba/commitlint-config-standard": "*",
+    "@mamba/configs": "*",
     "@mamba/eslint-config": "*",
     "@mamba/prettier-config": "*",
     "@mamba/stylelint-config": "*",
+    "@mamba/testing": "*",
+    "@mamba/webpack": "*",
     "@testing-library/svelte": "^3.2.2",
     "@types/jest": "^29.5.1",
-    "@types/node": "^20.2.3",
+    "@types/node": ">=20",
     "autoprefixer": "^10",
     "commitizen": "^3.1.2",
     "core-js": "^3.30.2",
-    "cross-env": "^7.0.3",
+    "cross-env": "^7",
     "cypress": "^12",
     "eslint": "^8",
     "jest": "^29",
     "postcss": "^8",
     "prettier": "^2",
     "stylelint": "^15",
+    "sucrase": "^3.32.0",
     "svelte": "^3.59.1",
     "svelte-preprocess": "^5.0.3",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "tslib": "^2.5.2",
     "typescript": "^5",
     "webpack": "^5"
   },
   "dependencies": {
     "@mamba/cli": "*",
-    "@mamba/configs": "*",
     "@mamba/jade": "*",
     "@mamba/jade-base": "*",
     "@mamba/styles": "*",
-    "@mamba/testing": "*",
-    "@mamba/utils": "*",
-    "@mamba/webpack": "*"
+    "@mamba/utils": "*"
   }
 }
