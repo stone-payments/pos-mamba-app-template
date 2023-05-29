@@ -1,11 +1,6 @@
 {
   "name": "my-mamba-app",
   "version": "1.0.0",
-  "bin": {
-    "mamba-build3": "temp_cli/node_build.mjs",
-    "mamba-test3": "temp_cli/node_build_test.mjs",
-    "mamba3": "temp_cli/node_start.mjs"
-  },
   "description": "Starter template for Mamba Applications.",
   "mamba": {
     "id": 99,
@@ -16,14 +11,14 @@
   },
   "type": "module",
   "license": "Apache-2.0",
-  "author": "Stone Payments - Mamba Team",
+  "author": "Stone Payments",
   "contributors": [],
   "engines": {
     "node": ">= 16",
     "npm": ">= 7"
   },
   "scripts": {
-    "start": "mamba3 app start",
+    "start": "mamba app start",
     "build": "mamba app build",
     "build:dev": "mamba app build -d",
     "build-browser": "mamba app build -t browser",
@@ -78,6 +73,7 @@
     "@babel/core": "^7",
     "@babel/preset-env": "^7",
     "@mamba/babel-config": "*",
+    "@mamba/cli": "*",
     "@mamba/configs": "*",
     "@mamba/eslint-config": "*",
     "@mamba/prettier-config": "*",
@@ -97,18 +93,13 @@
     "postcss": "^8",
     "prettier": "^2",
     "stylelint": "^15",
-    "sucrase": "^3.32.0",
     "svelte": "^3.59.1",
     "svelte-preprocess": "^5.0.3",
     "ts-jest": "^29.1.0",
-    "ts-node": "^10.9.1",
-    "tsconfig-paths": "^4.2.0",
-    "tslib": "^2.5.2",
     "typescript": "^5",
     "webpack": "^5"
   },
   "dependencies": {
-    "@mamba/cli": "*",
     "@mamba/jade": "*",
     "@mamba/jade-base": "*",
     "@mamba/styles": "*",
