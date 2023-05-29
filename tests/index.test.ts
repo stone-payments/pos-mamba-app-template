@@ -1,14 +1,8 @@
-import Router from 'svelte-page';
+import { render, screen } from '@testing-library/svelte';
+import App from '@/App.svelte';
 
-const { newApp } = global;
-
-newApp();
-
-it('should be at home', () => {
-  expect(document.title).toBe('Home');
-});
-
-it('should go to about page', () => {
-  Router.go('/about');
-  expect(document.title).toBe('About');
+test("says 'hello world!'", () => {
+  render(App);
+  const node = screen.queryByText('Hello world!');
+  expect(node).not.toBeNull();
 });
