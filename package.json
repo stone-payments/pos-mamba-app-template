@@ -23,12 +23,17 @@
     "build:dev": "mamba app build -d",
     "build-browser": "mamba app build -t browser",
     "build-browser:dev": "mamba app build -d -t browser",
+    "check:watch": "svelte-check --watch",
+    "check": "svelte-check",
     "serve": "mamba app serve",
     "analyze": "mamba app analyze",
     "lint": "mamba app lint",
     "format": "mamba app format",
-    "test": "jest",
-    "test:watch": "jest --watchAll"
+    "cy:open": "cypress open",
+    "test:unit": "cross-env NODE_ENV=test jest",
+    "test:watch": "cross-env NODE_ENV=test yarn run test:unit -- --watch",
+    "test:headless": "run-p --race start:test:server cy:run",
+    "test": "run-p --race start:test:server cy:open"
   },
   "lint-staged": {
     "linters": {
