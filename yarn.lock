@@ -2445,6 +2445,7 @@ __metadata:
     "@tsconfig/svelte": ^4.0.1
     autoprefixer: ^10.4.14
     css-loader: ^6.7.4
+    mini-css-extract-plugin: ^2.7.6
     postcss: ^8.4.23
     postcss-advanced-variables: ^3.0.1
     postcss-calc: ^9.0.1
@@ -10713,7 +10714,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mini-css-extract-plugin@npm:^2.7.5":
+"mini-css-extract-plugin@npm:^2.7.5, mini-css-extract-plugin@npm:^2.7.6":
   version: 2.7.6
   resolution: "mini-css-extract-plugin@npm:2.7.6"
   dependencies:
