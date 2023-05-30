@@ -2583,6 +2583,7 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/svelte": ^3.2.2
     "@testing-library/user-event": ^14.4.3
+    "@types/cypress__code-coverage": ^3.10.0
     "@types/jest": ^29.5.1
     "@types/node": ">=20"
     "@types/webpack": ^5
@@ -2603,6 +2604,7 @@ __metadata:
     svelte-jester: ^2.3.2
     svelte-preprocess: ^5
     ts-jest: ^29.1.0
+    ts-node: ^10.9.1
   peerDependencies:
     "@testing-library/svelte": ^3
     "@types/jest": ^29.5.1
@@ -3016,6 +3018,15 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: fe81351470f2d3165e8b12ce33542eef89ea893e36dd62e8f7d72566dfb7e448376ae962f9f3ea888547ce8b55a40020ca0e01d637fab5d99567673084542641
+  languageName: node
+  linkType: hard
+
+"@types/cypress__code-coverage@npm:^3.10.0":
+  version: 3.10.0
+  resolution: "@types/cypress__code-coverage@npm:3.10.0"
+  dependencies:
+    cypress: "*"
+  checksum: dad1c8aab5bff677eebd1d9e8c920074a4806e56943863c99bd922071e2c0cf2086c6071185a2903dbe1a07e3013cb3c81a8589ff317f41b96885c35b6c1743c
   languageName: node
   linkType: hard
 
@@ -5815,7 +5826,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:^12, cypress@npm:^12.12.0":
+"cypress@npm:*, cypress@npm:^12, cypress@npm:^12.12.0":
   version: 12.13.0
   resolution: "cypress@npm:12.13.0"
   dependencies:
