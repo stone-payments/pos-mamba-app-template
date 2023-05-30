@@ -53,7 +53,7 @@ npm run start
 
 ## Building and deploying to the `POS`
 
-1. Generate the *production* app bundle
+1. Generate the _production_ app bundle
 
 ```shell
 # With the @mamba/cli
