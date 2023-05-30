@@ -1,29 +1,49 @@
-<script lang="ts">
-  import { calculation } from '@/stores';
-  import Header from '@c/Header.svelte';
-  import Keypad from '@/Keypad.svelte';
-  import { EventType } from './types';
+<script>
+  import { Router, Route, Link } from 'svelte-navigator';
+  import BackButton from '@c/BackButton.svelte';
+  import ForwardButton from '@c/ForwardButton.svelte';
+  import LazyRoute from '@c/LazyRoute.svelte';
 
-  const handleSelect = ({ type, detail }) =>
-    calculation.handleSelect({ type: type as EventType, detail });
+  const Home = () => import('@routes/Home.svelte');
+  const About = () => import('@routes/About.svelte');
+  const Blog = () => import('@routes/Blog.svelte');
 </script>
 
-<div class="main" data-test="main">
-  <Header />
-  <Keypad on:number={handleSelect} on:operator={handleSelect} />
-</div>
+<Router>
+  <header>
+    <h1>History</h1>
+
+    <nav aria-label="Main">
+      <BackButton />
+      <ForwardButton />
+      <Link to="/">Base</Link>
+      <Link to="home">Home</Link>
+      <Link to="about">About</Link>
+      <Link to="blog">Blog</Link>
+    </nav>
+  </header>
+
+  <main>
+    <!--
+      When `delayMs` is set, the fallback will be displayed
+      after `delayMs` milliseconds.
+      It might lead to a better UX, because it will suppress
+      a flash of spinners on a fast connection.
+    -->
+    <LazyRoute path="blog/*blogRoute" component={Blog} delayMs={500}>
+      <h4>Loading...</h4>
+    </LazyRoute>
+    <LazyRoute path="home" component={Home} delayMs={500}>Loading Home...</LazyRoute>
+    <LazyRoute path="about" component={About} delayMs={500}>Loading About...</LazyRoute>
+    <Route>
+      <h3>Default</h3>
+      <p>No Route could be matched.</p>
+    </Route>
+  </main>
+</Router>
 
 <style>
   :global(body) {
-    /* background-image: url(./assets/reference.png); */
-    background-repeat: no-repeat;
-    background-position: 0 -30px;
-    background-size: 100% 110%;
-  }
-
-  .main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    font-family: sans-serif;
   }
 </style>
