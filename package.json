@@ -88,7 +88,7 @@
     "@mamba/testing": "*",
     "@mamba/webpack": "*",
     "@testing-library/cypress": "^9",
-    "@testing-library/svelte": "^3.2.2",
+    "@testing-library/svelte": "^3",
     "@types/jest": "^29.5.1",
     "@types/node": ">=20",
     "autoprefixer": "^10",
