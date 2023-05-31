@@ -11,13 +11,12 @@
 
 <Router>
   <header>
-    <h1>History</h1>
+    <h1>My Mamba Application</h1>
 
     <nav aria-label="Main">
       <BackButton />
       <ForwardButton />
-      <Link to="/">Base</Link>
-      <Link to="home">Home</Link>
+      <Link to="/">Home</Link>
       <Link to="about">About</Link>
       <Link to="blog">Blog</Link>
     </nav>
@@ -30,15 +29,19 @@
       It might lead to a better UX, because it will suppress
       a flash of spinners on a fast connection.
     -->
+    <Route path="/" component={Home} />
     <LazyRoute path="blog/*blogRoute" component={Blog} delayMs={500}>
       <h4>Loading...</h4>
     </LazyRoute>
-    <LazyRoute path="home" component={Home} delayMs={500}>Loading Home...</LazyRoute>
     <LazyRoute path="about" component={About} delayMs={500}>Loading About...</LazyRoute>
-    <Route>
-      <h3>Default</h3>
-      <p>No Route could be matched.</p>
-    </Route>
+
+    <!-- Fallback for undefined routes: -->
+    <!--
+      <Route>
+        <h3>Default</h3>
+        <p>No Route could be matched.</p>
+      </Route>
+    -->
   </main>
 </Router>
 
