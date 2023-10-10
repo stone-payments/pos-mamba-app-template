@@ -13,8 +13,8 @@
   "author": "Stone Payments - Mamba Team",
   "contributors": [],
   "engines": {
-    "node": ">=10 <=14",
-    "npm": ">=7 <=8"
+    "node": ">=12 <=16",
+    "npm": ">=7"
   },
   "scripts": {
     "start": "mamba app start",
@@ -25,9 +25,7 @@
     "serve": "mamba app serve",
     "analyze": "mamba app analyze",
     "lint": "mamba app lint",
-    "format": "mamba app format",
-    "test": "jest",
-    "test:watch": "jest --watchAll"
+    "format": "mamba app format"
   },
   "husky": {
     "hooks": {
@@ -35,59 +33,50 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "*.{html,svelte}": [
-        "eslint --fix",
-        "stylelint --fix",
-        "git add"
-      ],
-      "*.js": [
-        "prettier --write",
-        "eslint --fix",
-        "git add"
-      ],
-      "*.{pcss,css}": [
-        "stylelint --fix",
-        "git add"
-      ]
-    }
+    "*.{html,svelte}": [
+      "eslint --fix",
+      "stylelint --fix"
+    ],
+    "*.{js,ts,cjs,mjs}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{pcss,css}": [
+      "stylelint --fix"
+    ]
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@mamba/cli": "^9.5.0",
-    "@mamba/configs": "^9.5.0",
-    "@mamba/webpack": "^9.5.0",
-    "babel-jest": "^24.7.1",
-    "browserslist": "^4.21.5",
-    "core-js": "^3.29.0",
-    "cross-env": "^5.2.0",
-    "deasync": "^0.1.14",
-    "eslint": "^7.32.0",
-    "eslint-plugin-html": "^7.1.0",
-    "http-server": "^0.11.1",
-    "husky": "^2.7.0",
-    "jest": "^24.7.1",
-    "lint-staged": "^8.1.5",
-    "postcss": "^7.0.39",
-    "prettier": "^2.8.4",
-    "quickenv": "0.0.6",
-    "stylelint": "^14.16.1",
-    "svelte-preprocess": "^2.16.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.5",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.0"
+    "@babel/core": "^7",
+    "@mamba/cli": "^10.3.0",
+    "@mamba/configs": "^10.3.0",
+    "@mamba/webpack": "^10.4.0",
+    "@playwright/test": "~1.34.3",
+    "core-js": "^3.30.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^7",
+    "http-server": "^0.12.3",
+    "husky": "^2",
+    "lint-staged": "^14.0.1",
+    "postcss": "^7",
+    "prettier": "^2",
+    "quickenv": "^0.0.6",
+    "stylelint": "^14",
+    "svelte-preprocess": "^2",
+    "ts-node": "^10",
+    "typescript": "^4",
+    "webpack": ">=4 <5",
+    "webpack-cli": "^4"
   },
   "dependencies": {
-    "@mamba/app": "^9.5.0",
-    "@mamba/appbar": "^9.5.0",
-    "@mamba/button": "^9.5.0",
-    "@mamba/dialog": "^9.5.0",
-    "@mamba/icon": "^9.5.0",
-    "@mamba/pos": "^9.5.0",
-    "@mamba/printable": "^9.5.0",
-    "@mamba/styles": "^9.5.0",
-    "svelte": "2.16.1",
+    "@mamba/app": "^10.4.1",
+    "@mamba/appbar": "^10.3.0",
+    "@mamba/button": "^10.3.0",
+    "@mamba/dialog": "^10.3.0",
+    "@mamba/icon": "^10.3.0",
+    "@mamba/pos": "^10.4.1",
+    "@mamba/printable": "^10.4.1",
+    "@mamba/styles": "^10.3.0",
+    "svelte": "<3",
     "svelte-page": "^2.2.1"
   }
 }

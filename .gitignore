@@ -2,6 +2,9 @@
 node_modules/
 dist/
 package-lock.json
+yarn.lock
+.yarnrc.yml
+.yarn
 
 # Workspace files
 /coverage/
@@ -13,3 +16,5 @@ yarn-error.log
 npm-debug.log
 debug.log
 .directory
+/playwright-report/
+/playwright/.cache/

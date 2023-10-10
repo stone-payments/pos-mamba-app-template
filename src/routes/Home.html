@@ -14,16 +14,11 @@
 <Button
   size="full"
   bottom
-  on:click="refs.dialog.open(2000)"
+  on:click="refs.printable.print()"
   shortcut="enter"
 >
   Imprimir! (press. enter)
 </Button>
-
-<Dialog ref:dialog fullscreen>
-  <LoadingSprite />
-  <h1>Carregando...</h1>
-</Dialog>
 
 <script>
   export default {
@@ -31,8 +26,6 @@
       AppBarModifier: '@mamba/appbar/Modifier.html',
       Printable: '@mamba/printable',
       Button: '@mamba/button',
-      Dialog: '@mamba/dialog',
-      LoadingSprite: '@mamba/sprite/Loading.html',
     },
   };
 </script>
